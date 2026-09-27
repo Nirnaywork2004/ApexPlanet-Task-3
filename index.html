@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ApexPlanet Internship Task 3 — Advanced Styling and JavaScript. Featuring responsive media queries, interactive vanilla JavaScript quiz, and live Open-Meteo public API integration.">
+  <meta name="author" content="ApexPlanet Intern">
+  <meta name="theme-color" content="#0b0f19">
+  <title>ApexPlanet Task 3 | Advanced Styling &amp; JavaScript</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#home" class="brand-logo" aria-label="ApexDev Home">
+        <span class="logo-badge">&lt;/&gt;</span>
+        <span class="logo-text">Apex<span class="logo-accent">Dev</span></span>
+        <span class="logo-tag">Task 3</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#quiz" class="nav-link">Quiz</a></li>
+          <li class="nav-item"><a href="#weather" class="nav-link">Weather / API</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        </ul>
+        <a href="#quiz" class="btn btn-sm btn-primary nav-cta">Start Quiz</a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: HERO / HOME -->
+    <section class="hero-section" id="home">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>ApexPlanet Internship &bull; Task 3</span>
+          </div>
+          <h1 class="hero-title">
+            Advanced Styling &amp; <span class="gradient-text">JavaScript</span>
+          </h1>
+          <p class="hero-subtitle">
+            A modern, production-grade frontend project demonstrating <strong>responsive design with media queries</strong>, an <strong>interactive JavaScript quiz</strong> with state management, and <strong>live public API data integration</strong>.
+          </p>
+          <div class="hero-actions">
+            <a href="#quiz" class="btn btn-primary btn-lg">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <span>Take the Quiz</span>
+            </a>
+            <a href="#weather" class="btn btn-secondary btn-lg">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+              </svg>
+              <span>Explore Weather</span>
+            </a>
+          </div>
+
+          <!-- Feature Highlights -->
+          <div class="hero-features">
+            <div class="feature-item">
+              <span class="feature-icon">&#x2713;</span>
+              <span>CSS Media Queries</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">&#x2713;</span>
+              <span>Vanilla JS State</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">&#x2713;</span>
+              <span>Open-Meteo Live API</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Developer Element -->
+        <div class="hero-visual">
+          <div class="code-card">
+            <div class="card-topbar">
+              <div class="card-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="card-filename">apex-task3.config.js</div>
+              <div class="card-status-badge">Live System</div>
+            </div>
+            <div class="code-body">
+              <pre><code><span class="token-keyword">const</span> <span class="token-def">apexProject</span> = {
+  <span class="token-prop">task</span>: <span class="token-string">"Task 3: Styling &amp; JS"</span>,
+  <span class="token-prop">responsive</span>: {
+    <span class="token-prop">breakpoints</span>: [<span class="token-string">"375px"</span>, <span class="token-string">"768px"</span>, <span class="token-string">"1024px"</span>, <span class="token-string">"1440px"</span>],
+    <span class="token-prop">method</span>: <span class="token-string">"CSS3 Media Queries"</span>,
+    <span class="token-prop">status</span>: <span class="token-boolean">true</span>
+  },
+  <span class="token-prop">interactiveQuiz</span>: {
+    <span class="token-prop">runtime</span>: <span class="token-string">"Vanilla JavaScript"</span>,
+    <span class="token-prop">stateTracking</span>: <span class="token-string">"Score + Question Flow"</span>,
+    <span class="token-prop">refreshRequired</span>: <span class="token-boolean">false</span>
+  },
+  <span class="token-prop">weatherApi</span>: {
+    <span class="token-prop">provider</span>: <span class="token-string">"Open-Meteo Public API"</span>,
+    <span class="token-prop">client</span>: <span class="token-string">"Fetch API + async/await"</span>,
+    <span class="token-prop">errorHandling</span>: <span class="token-string">"Full 6-State Management"</span>
+  }
+};</code></pre>
+            </div>
+            <div class="code-footer">
+              <span class="code-pill"><span class="pill-dot"></span> 100% Client-Side</span>
+              <span class="code-pill">Zero Frameworks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: RESPONSIVE METRICS BAR -->
+    <section class="metrics-section" aria-label="Responsive Design Specs">
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <div class="metric-info">
+              <span class="metric-label">Desktop Viewport</span>
+              <strong class="metric-val">&ge; 1024px</strong>
+              <span class="metric-desc">Multi-column grid &amp; spacious layout</span>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            </div>
+            <div class="metric-info">
+              <span class="metric-label">Tablet Viewport</span>
+              <strong class="metric-val">768px &ndash; 1023px</strong>
+              <span class="metric-desc">Adapted spacing &amp; flexible cards</span>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            </div>
+            <div class="metric-info">
+              <span class="metric-label">Mobile Viewport</span>
+              <strong class="metric-val">&lt; 768px (to 375px)</strong>
+              <span class="metric-desc">Single column, touch menus, zero overflow</span>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            </div>
+            <div class="metric-info">
+              <span class="metric-label">Live Public API</span>
+              <strong class="metric-val">Real-Time Data</strong>
+              <span class="metric-desc">Open-Meteo live weather integration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: INTERACTIVE QUIZ -->
+    <section class="quiz-section" id="quiz">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Interactive Component</div>
+          <h2 class="section-title">Web Development <span class="gradient-text">Quiz</span></h2>
+          <p class="section-subtitle">Test your knowledge across HTML5, CSS3, Responsive Design, and Modern JavaScript. Real-time feedback and state tracking powered by Vanilla JS.</p>
+        </div>
+
+        <div class="quiz-wrapper">
+          <div class="quiz-card" id="quiz-card">
+            
+            <!-- Quiz Start State Screen -->
+            <div class="quiz-screen quiz-screen-start" id="quiz-start-screen">
+              <div class="quiz-start-icon-wrap">
+                <div class="quiz-start-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="quiz-start-title">Ready to Test Your Frontend Skills?</h3>
+              <p class="quiz-start-desc">This interactive quiz contains 6 curated questions covering core web development principles. You will receive instant visual feedback for each answer and a comprehensive score breakdown at the end.</p>
+              
+              <div class="quiz-topics-grid">
+                <div class="topic-chip"><span class="chip-dot"></span> HTML5 Semantic Elements</div>
+                <div class="topic-chip"><span class="chip-dot"></span> CSS3 Layouts &amp; Media Queries</div>
+                <div class="topic-chip"><span class="chip-dot"></span> JavaScript DOM &amp; Events</div>
+                <div class="topic-chip"><span class="chip-dot"></span> Asynchronous Fetch API</div>
+              </div>
+
+              <button class="btn btn-primary btn-lg" id="btn-start-quiz">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span>Start Quiz</span>
+              </button>
+            </div>
+
+            <!-- Quiz Playing State Screen -->
+            <div class="quiz-screen quiz-screen-play hide" id="quiz-play-screen" aria-live="polite">
+              <!-- Quiz Meta Header -->
+              <div class="quiz-meta-bar">
+                <div class="quiz-counter-wrap">
+                  <span class="quiz-counter-label">Progress:</span>
+                  <span class="quiz-counter" id="quiz-counter">Question 1 of 6</span>
+                </div>
+                <div class="quiz-category-tag" id="quiz-category-tag">HTML5</div>
+                <div class="quiz-score-badge">
+                  <span>Score:</span>
+                  <strong id="quiz-current-score">0</strong>
+                </div>
+              </div>
+
+              <!-- Progress Bar -->
+              <div class="quiz-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="16" id="quiz-progress-bar">
+                <div class="quiz-progress-fill" id="quiz-progress-fill" style="width: 16.66%;"></div>
+              </div>
+
+              <!-- Question Container -->
+              <div class="quiz-question-box">
+                <h3 class="quiz-question-text" id="quiz-question-text">Loading question...</h3>
+              </div>
+
+              <!-- Answer Options Grid -->
+              <div class="quiz-options-grid" id="quiz-options-grid" role="radiogroup" aria-label="Answer options">
+                <!-- Options injected dynamically by JS -->
+              </div>
+
+              <!-- Feedback / Explanation Alert -->
+              <div class="quiz-feedback-box hide" id="quiz-feedback-box" role="alert">
+                <div class="feedback-header">
+                  <span class="feedback-status-icon" id="feedback-status-icon"></span>
+                  <strong class="feedback-status-text" id="feedback-status-text">Correct!</strong>
+                </div>
+                <p class="feedback-explanation" id="feedback-explanation"></p>
+              </div>
+
+              <!-- Controls / Next Button -->
+              <div class="quiz-controls">
+                <div class="quiz-hint-text" id="quiz-hint-text">Select one answer to continue.</div>
+                <button class="btn btn-primary" id="btn-next-question" disabled>
+                  <span>Next Question</span>
+                  <svg class="btn-icon-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Quiz Finished / Results State Screen -->
+            <div class="quiz-screen quiz-screen-result hide" id="quiz-result-screen" aria-live="polite">
+              <div class="result-badge-wrap">
+                <div class="result-circle" id="result-circle">
+                  <svg viewBox="0 0 100 100" class="circle-svg">
+                    <circle class="circle-bg" cx="50" cy="50" r="42"></circle>
+                    <circle class="circle-progress" id="circle-progress" cx="50" cy="50" r="42"></circle>
+                  </svg>
+                  <div class="circle-content">
+                    <span class="circle-score" id="result-score-percent">0%</span>
+                    <span class="circle-label">Score</span>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="result-title" id="result-title">Quiz Complete!</h3>
+              <p class="result-score-detail" id="result-score-detail">Your Score: <strong>0</strong> out of <strong>6</strong> questions</p>
+              <p class="result-evaluation" id="result-evaluation">Evaluating your score...</p>
+
+              <!-- Performance Summary Stats -->
+              <div class="result-stats-grid">
+                <div class="result-stat-card">
+                  <span class="stat-label">Total Questions</span>
+                  <strong class="stat-value" id="stat-total-q">6</strong>
+                </div>
+                <div class="result-stat-card stat-correct">
+                  <span class="stat-label">Correct Answers</span>
+                  <strong class="stat-value" id="stat-correct-q">0</strong>
+                </div>
+                <div class="result-stat-card stat-incorrect">
+                  <span class="stat-label">Incorrect Answers</span>
+                  <strong class="stat-value" id="stat-incorrect-q">0</strong>
+                </div>
+                <div class="result-stat-card">
+                  <span class="stat-label">Accuracy</span>
+                  <strong class="stat-value" id="stat-accuracy">0%</strong>
+                </div>
+              </div>
+
+              <!-- Action buttons -->
+              <div class="result-actions">
+                <button class="btn btn-primary btn-lg" id="btn-restart-quiz">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="1 4 1 10 7 10"></polyline>
+                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                  </svg>
+                  <span>Restart Quiz</span>
+                </button>
+                <a href="#weather" class="btn btn-secondary btn-lg">
+                  <span>Explore Live Weather API</span>
+                  <svg class="btn-icon-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PUBLIC API INTEGRATION (LIVE WEATHER) -->
+    <section class="weather-section" id="weather">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Public API Integration</div>
+          <h2 class="section-title">Live <span class="gradient-text">Weather</span></h2>
+          <p class="section-subtitle">Real-time worldwide weather fetched directly from Open-Meteo Public API using JavaScript Fetch API with full async state and error handling.</p>
+        </div>
+
+        <div class="weather-wrapper">
+          <!-- Weather Search & Form Controls -->
+          <div class="weather-search-card">
+            <form class="weather-form" id="weather-form" role="search" novalidate>
+              <div class="search-input-group">
+                <label for="city-input" class="visually-hidden">Enter city name</label>
+                <div class="input-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </div>
+                <input 
+                  type="text" 
+                  id="city-input" 
+                  class="city-input" 
+                  placeholder="Enter city name (e.g. London, Tokyo, New York)..." 
+                  autocomplete="off"
+                  spellcheck="false"
+                  required
+                >
+                <button type="button" class="btn-clear-input hide" id="btn-clear-input" aria-label="Clear city input">
+                  &times;
+                </button>
+              </div>
+              <button type="submit" class="btn btn-primary weather-search-btn" id="weather-search-btn">
+                <span class="btn-text">Get Weather</span>
+                <span class="spinner hide" id="search-spinner" aria-hidden="true"></span>
+              </button>
+            </form>
+
+            <!-- Quick City Selector Chips -->
+            <div class="quick-cities-wrap">
+              <span class="quick-cities-label">Popular cities:</span>
+              <div class="quick-chips" id="quick-chips">
+                <button type="button" class="chip-btn" data-city="London">London</button>
+                <button type="button" class="chip-btn" data-city="Tokyo">Tokyo</button>
+                <button type="button" class="chip-btn" data-city="New York">New York</button>
+                <button type="button" class="chip-btn" data-city="Paris">Paris</button>
+                <button type="button" class="chip-btn" data-city="Sydney">Sydney</button>
+                <button type="button" class="chip-btn" data-city="Kolkata">Kolkata</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Weather Display Area (States) -->
+          <div class="weather-display-area" id="weather-display-area" aria-live="polite">
+            
+            <!-- State 1: Initial State -->
+            <div class="weather-state-card state-initial" id="weather-state-initial">
+              <div class="state-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="state-svg" aria-hidden="true">
+                  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                </svg>
+              </div>
+              <h3 class="state-title">Search for a city to see live weather.</h3>
+              <p class="state-desc">Type any city name above or click one of the popular quick-select cities to query the Open-Meteo Geocoding and Weather forecast APIs.</p>
+              <div class="api-meta-badge">
+                <span class="api-dot"></span> Endpoint: api.open-meteo.com/v1/forecast
+              </div>
+            </div>
+
+            <!-- State 2: Loading State -->
+            <div class="weather-state-card state-loading hide" id="weather-state-loading">
+              <div class="loading-spinner-wrap">
+                <div class="pulse-ring"></div>
+                <div class="spinner-large"></div>
+              </div>
+              <h3 class="state-title">Fetching weather data...</h3>
+              <p class="state-desc" id="loading-desc-text">Resolving coordinates and querying live meteorological forecasts.</p>
+            </div>
+
+            <!-- State 3: Successful Response (Weather Card) -->
+            <div class="weather-card hide" id="weather-card-success">
+              <div class="weather-card-header">
+                <div class="location-info">
+                  <div class="location-title-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pin-icon" aria-hidden="true">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <h3 class="weather-city-name" id="weather-city-name">London</h3>
+                  </div>
+                  <span class="weather-country" id="weather-country">United Kingdom</span>
+                </div>
+                <div class="weather-card-meta">
+                  <span class="weather-date" id="weather-date">Sunday, September 27, 2026</span>
+                  <span class="weather-time" id="weather-time">12:00 PM (Local Time)</span>
+                </div>
+              </div>
+
+              <div class="weather-main-grid">
+                <!-- Temperature & Condition Hero -->
+                <div class="weather-primary-info">
+                  <div class="weather-icon-box" id="weather-icon-box">
+                    <!-- Dynamic Weather SVG icon -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="weather-condition-svg" id="weather-condition-svg"></svg>
+                  </div>
+                  <div class="weather-temp-wrap">
+                    <div class="weather-temp" id="weather-temp">22<span class="temp-unit">&deg;C</span></div>
+                    <div class="weather-condition" id="weather-condition">Partly Cloudy</div>
+                  </div>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="weather-metrics-grid">
+                  <div class="weather-metric-item">
+                    <div class="metric-item-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path>
+                      </svg>
+                    </div>
+                    <div class="metric-item-data">
+                      <span class="metric-item-label">Wind Speed</span>
+                      <strong class="metric-item-value" id="weather-wind">12 km/h</strong>
+                    </div>
+                  </div>
+
+                  <div class="weather-metric-item">
+                    <div class="metric-item-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                      </svg>
+                    </div>
+                    <div class="metric-item-data">
+                      <span class="metric-item-label">Humidity</span>
+                      <strong class="metric-item-value" id="weather-humidity">65%</strong>
+                    </div>
+                  </div>
+
+                  <div class="weather-metric-item">
+                    <div class="metric-item-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path>
+                      </svg>
+                    </div>
+                    <div class="metric-item-data">
+                      <span class="metric-item-label">Feels Like</span>
+                      <strong class="metric-item-value" id="weather-apparent-temp">21°C</strong>
+                    </div>
+                  </div>
+
+                  <div class="weather-metric-item">
+                    <div class="metric-item-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                      </svg>
+                    </div>
+                    <div class="metric-item-data">
+                      <span class="metric-item-label">Coordinates</span>
+                      <strong class="metric-item-value" id="weather-coords">51.5°N, 0.12°W</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Weather Card Footer -->
+              <div class="weather-card-footer">
+                <span class="data-source-tag">
+                  <span class="pulse-dot-green"></span> Live data verified via Open-Meteo
+                </span>
+                <button type="button" class="btn-refresh-weather" id="btn-refresh-weather" aria-label="Refresh current city weather">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="23 4 23 10 17 10"></polyline>
+                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                  </svg>
+                  <span>Refresh</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- State 4: Invalid City Error State -->
+            <div class="weather-state-card state-error hide" id="weather-state-not-found" role="alert">
+              <div class="state-icon-wrap state-icon-warning">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="state-svg" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+              </div>
+              <h3 class="state-title">City not found. Please try another city.</h3>
+              <p class="state-desc">We couldn't locate coordinates for the requested location. Please check the spelling or try searching for a major nearby city.</p>
+            </div>
+
+            <!-- State 5: Network / API Error State -->
+            <div class="weather-state-card state-error hide" id="weather-state-error" role="alert">
+              <div class="state-icon-wrap state-icon-danger">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="state-svg" aria-hidden="true">
+                  <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                  <line x1="15" y1="9" x2="9" y2="15"></line>
+                  <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+              </div>
+              <h3 class="state-title">Unable to fetch weather data. Please try again.</h3>
+              <p class="state-desc" id="network-error-detail">A network error occurred while communicating with the Open-Meteo servers. Please check your internet connection.</p>
+            </div>
+
+            <!-- State 6: Empty Input Notification State -->
+            <div class="weather-state-card state-warning hide" id="weather-state-empty" role="alert">
+              <div class="state-icon-wrap state-icon-warning">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="state-svg" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </div>
+              <h3 class="state-title">Please enter a city name.</h3>
+              <p class="state-desc">The search field cannot be empty. Type a city name such as "London", "Tokyo", or "Paris" to fetch real-time weather forecasts.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: ABOUT / TECHNOLOGIES -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Architecture &amp; Skills</div>
+          <h2 class="section-title">Core <span class="gradient-text">Technologies</span></h2>
+          <p class="section-subtitle">This project adheres strictly to the ApexPlanet Internship Task 3 specifications using pure frontend web standards.</p>
+        </div>
+
+        <div class="tech-grid">
+          <!-- Tech Card 1 -->
+          <div class="tech-card">
+            <div class="tech-badge-header">
+              <span class="tech-badge">Markup</span>
+              <span class="tech-version">v5.0</span>
+            </div>
+            <h3 class="tech-name">HTML5 Semantics</h3>
+            <p class="tech-desc">Constructed with standard semantic elements (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code>) and full ARIA accessibility attributes for screen readers.</p>
+            <div class="tech-pill-list">
+              <span class="tech-pill">Semantic Structure</span>
+              <span class="tech-pill">ARIA Roles</span>
+              <span class="tech-pill">SEO Best Practices</span>
+            </div>
+          </div>
+
+          <!-- Tech Card 2 -->
+          <div class="tech-card">
+            <div class="tech-badge-header">
+              <span class="tech-badge">Styling</span>
+              <span class="tech-version">v3.0</span>
+            </div>
+            <h3 class="tech-name">CSS3 &amp; Media Queries</h3>
+            <p class="tech-desc">Custom CSS architecture featuring CSS Variables (custom properties), Flexbox, CSS Grid, and explicit Media Queries for Desktop (&ge;1024px), Tablet (768px&ndash;1023px), and Mobile (&lt;768px down to 375px).</p>
+            <div class="tech-pill-list">
+              <span class="tech-pill">Media Queries</span>
+              <span class="tech-pill">CSS Variables</span>
+              <span class="tech-pill">Responsive Grid</span>
+            </div>
+          </div>
+
+          <!-- Tech Card 3 -->
+          <div class="tech-card">
+            <div class="tech-badge-header">
+              <span class="tech-badge">Logic</span>
+              <span class="tech-version">ES6+</span>
+            </div>
+            <h3 class="tech-name">Vanilla JavaScript</h3>
+            <p class="tech-desc">Modern JavaScript implementation with modular structure, local state management for the quiz lifecycle, dynamic DOM manipulation, and smooth event listeners without external libraries.</p>
+            <div class="tech-pill-list">
+              <span class="tech-pill">State Management</span>
+              <span class="tech-pill">DOM Manipulation</span>
+              <span class="tech-pill">Event Listeners</span>
+            </div>
+          </div>
+
+          <!-- Tech Card 4 -->
+          <div class="tech-card">
+            <div class="tech-badge-header">
+              <span class="tech-badge">Networking</span>
+              <span class="tech-version">Async/Await</span>
+            </div>
+            <h3 class="tech-name">Fetch API &amp; Public API</h3>
+            <p class="tech-desc">Direct communication with the Open-Meteo Geocoding &amp; Forecast REST APIs. Seamless handling of initial, loading, success, invalid city, and network failure states with zero hard-coded responses.</p>
+            <div class="tech-pill-list">
+              <span class="tech-pill">Fetch API</span>
+              <span class="tech-pill">Open-Meteo REST</span>
+              <span class="tech-pill">6-State Error Flow</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Internship Requirements Compliance Card -->
+        <div class="compliance-card">
+          <div class="compliance-header">
+            <div class="compliance-icon">&#x2713;</div>
+            <div class="compliance-title-wrap">
+              <h3 class="compliance-title">ApexPlanet Task 3 Specification Compliance</h3>
+              <p class="compliance-desc">Verification checklist against all three core internship deliverables</p>
+            </div>
+          </div>
+          <div class="compliance-grid">
+            <div class="compliance-item">
+              <div class="compliance-check">&#x2714;</div>
+              <div class="compliance-item-body">
+                <strong>Requirement 1: Responsive Media Queries</strong>
+                <p>Explicit CSS media query breakpoints for Desktop, Tablet, and Mobile with zero horizontal overflow.</p>
+              </div>
+            </div>
+            <div class="compliance-item">
+              <div class="compliance-check">&#x2714;</div>
+              <div class="compliance-item-body">
+                <strong>Requirement 2: Interactive Quiz Component</strong>
+                <p>Dynamic 6-question quiz with score tracking, progress bar, instant visual feedback, and restart capability.</p>
+              </div>
+            </div>
+            <div class="compliance-item">
+              <div class="compliance-check">&#x2714;</div>
+              <div class="compliance-item-body">
+                <strong>Requirement 3: Live Public API Integration</strong>
+                <p>Real Open-Meteo Geocoding &amp; Weather API integration through asynchronous Fetch API calls.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand-col">
+        <a href="#home" class="brand-logo" aria-label="ApexDev Home">
+          <span class="logo-badge">&lt;/&gt;</span>
+          <span class="logo-text">Apex<span class="logo-accent">Dev</span></span>
+        </a>
+        <p class="footer-tagline">ApexPlanet Internship &bull; Task 3 &mdash; Advanced Styling and JavaScript</p>
+      </div>
+
+      <div class="footer-links-col">
+        <h4 class="footer-heading">Quick Navigation</h4>
+        <ul class="footer-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#quiz">Interactive Quiz</a></li>
+          <li><a href="#weather">Live Weather API</a></li>
+          <li><a href="#about">Technologies</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4 class="footer-heading">Project Connect</h4>
+        <ul class="footer-socials">
+          <li>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span>GitHub Repository</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              <span>LinkedIn Profile</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="copyright">&copy; 2026 ApexPlanet Internship &bull; Task 3 — Advanced Styling and JavaScript. All rights reserved.</p>
+        <p class="footer-spec">Built with Vanilla HTML5, CSS3 Media Queries &amp; JavaScript ES6+</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript Application -->
+  <script src="app.js"></script>
+</body>
+</html>

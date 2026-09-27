@@ -1,0 +1,13 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment and Credentials
+.env
+.env.local
+*.log
+
+# Node dependencies & caches (if any)
+node_modules/
+.npm/
